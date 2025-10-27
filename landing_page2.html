@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
+    <title>Cultura e Tradição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F4F1DE;
+            color: #2B2B2B;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #2B2B2B;
+            color: #E9C46A;
+        }
+        header {
+            background-color: #8B3A3A;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #606C38;
+        }
+        .tip {
+            background-color: #fde3a0;
+            border-left: 5px solid #8B3A3A;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        body.dark-mode .tip {
+            background-color: #4A4A4A;
+            border-left-color: #E9C46A;
+            color: #F5F5F5;
+        }
+        button {
+            background-color: #8B3A3A;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #571717;
+        }
+        #toggleMode{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 14px;
+            font-size: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: #5a2020;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            z-index: 1000;
+        }
+        #toggleMode:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleMode" onclick="toggleMode()">🌙</button>
+    <header>
+        <h1>Cultura e Tradição: Sumaré em Foco</h1>
+        <p style="font-size: 1.2em; margin-top: 5px; color: #F4F1DE;">Descubra a história, os costumes e os talentos que fazem nossa cidade única</p>
+    </header>
+    <main>
+        <section>
+            <h2>História e Identidade</h2>
+            <div class="tip">
+                Sumaré, localizada no coração do interior paulista, carrega uma história marcada pela força do trabalho e pelo crescimento junto às famílias que ajudaram a construir a cidade. 
+                Desde a fundação, em 1868, a cidade passou de uma pequena vila agrícola para um importante polo industrial e cultural, sem perder o espírito acolhedor do interior.
+                <br><br>
+                Hoje, Sumaré é reconhecida por sua mistura única de modernidade e tradição, onde o progresso anda lado a lado com as lembranças e costumes do passado.
+            </div>
+            <button onclick="alert('Curiosidade: O nome da cidade foi definido em um plebiscito em 1945, substituindo o nome anterior, Rebouças.')">Curiosidade 1</button>
+            <button onclick="alert('Curiosidade: Sumaré se emancipou de Campinas em 1953, tornando-se oficialmente um município independente.')">Curiosidade 2</button>
+            <button onclick="alert('Curiosidade: O nome “Sumaré” vem de uma planta típica da região, conhecida por crescer sobre outras árvores.')">Curiosidade 3</button>
+        </section>
+
+        <section>
+            <h2>Festas e Tradições</h2>
+            <div class="tip">
+                A cidade mantém vivas suas tradições por meio de festas e eventos que reúnem famílias, amigos e visitantes. 
+                A Festa do Peão de Sumaré é um dos eventos mais esperados do ano, trazendo música sertaneja, comidas típicas e o calor da cultura caipira.
+                <br><br>
+                Além disso, festas religiosas e comemorações escolares fortalecem o sentimento de comunidade e preservam as raízes culturais da cidade.
+            </div>
+            <button onclick="alert('Curiosidade: A Festa do Peão de Sumaré atrai milhares de visitantes todos os anos e é considerada uma das maiores do interior paulista.')">Curiosidade 1</button>
+            <button onclick="alert('Curiosidade: Em muitos bairros, ainda é comum a realização de quermesses e festas juninas com barracas e danças típicas.')">Curiosidade 2</button>
+            <button onclick="alert('Curiosidade: As celebrações religiosas em Sumaré incluem paróquias como a Nossa Senhora Aparecida.')">Curiosidade 3</button>
+        </section>
+
+        <section>
+            <h2>Sabores E Arte Local</h2>
+            <div class="tip">
+                A culinária sumareense reflete a diversidade do interior paulista: quitutes de feira, pastel, caldo de cana e aquele pão caseiro que lembra casa de vó. 
+                Muitos moradores ainda mantêm tradições familiares na cozinha, compartilhando receitas que passam de geração em geração.
+                <br><br>
+                No campo artístico, Sumaré abriga artistas locais talentosos — músicos, pintores e artesãos que expressam nas suas obras o amor pela cidade e pela cultura regional.
+            </div>
+            <button onclick="alert('Curiosidade: Em feiras e eventos locais, é possível encontrar artesanatos feitos à mão por moradores da própria cidade.')">Curiosidade 1</button>
+            <button onclick="alert('Curiosidade: A culinária local é fortemente influenciada pelas tradições mineiras e italianas, muito presentes na história da cidade.')">Curiosidade 2</button>
+            <button onclick="alert('Curiosidade: Sumaré tem grupos musicais e corais comunitários que se apresentam em datas comemorativas e eventos culturais.')">Curiosidade 3</button>
+        </section>
+    </main>
+    <script>
+        const toggleBtn = document.getElementById('toggleMode');
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️';
+
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const darkModeActive = document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = darkModeActive ? '☀️' : '🌙';
+            localStorage.setItem('darkMode', darkModeActive);
+        });
+    </script>
+</body>
+</html>
